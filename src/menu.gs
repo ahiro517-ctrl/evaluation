@@ -7,6 +7,7 @@ function onOpen() {
   SpreadsheetApp.getUi()
     .createMenu('評価運用')
     .addItem('① 評価シートを生成 / 再生成', 'menuBuild_')
+    .addItem('① -2 個人面談シートを作成（名簿から）', 'generateInterviewSheets')
     .addSeparator()
     .addItem('② 昇格・降格を判定', 'evaluatePromotionDemotion')
     .addItem('③ 当期を確定して履歴へ', 'menuCommit_')

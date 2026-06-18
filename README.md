@@ -33,6 +33,7 @@ src/
   constants.gs      制度マスタ定数（唯一の正）
   build.gs          スプレッドシート生成・数式/入力規則の注入
   logic.gs          昇格・降格の連続判定／確定→履歴追記
+  interview.gs      個人面談シート（縦型・1人1枚）の生成
   menu.gs           「評価運用」メニュー
 docs/
   評価シート設計書.md

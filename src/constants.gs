@@ -15,6 +15,8 @@ const SHEETS = {
   SUMMARY:  '評価結果サマリ',
   PROMOTE:  '昇格・降格判定',
   HISTORY:  '履歴',
+  INTERVIEW_TPL: '面談テンプレート',
+  INTERVIEW_PREFIX: '面談_',
 };
 
 /** 入力行の最大数（数式を流し込む行数） */

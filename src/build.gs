@@ -69,6 +69,7 @@ function buildWorkbook(periodLabel) {
   buildSummarySheet_(ss);
   buildPromoteSheet_(ss);
   buildHistorySheet_(ss);
+  buildInterviewTemplate_(ss);
 
   // 既定の空シートを掃除
   var first = ss.getSheets()[0];
