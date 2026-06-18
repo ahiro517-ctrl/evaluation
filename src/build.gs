@@ -123,31 +123,31 @@ function buildConfigSheet_(ss, periodLabel) {
   sh.getRange('A44').setValue('対象期');
   sh.getRange('B44').setValue(periodLabel).setFontWeight('bold').setBackground('#fff9c4');
 
-  // ── 昇降給マトリクス（F1〜I9）
-  sh.getRange('F1').setValue('■ 昇降給マトリクス（粗利判定×バリュー判定→最終判定）').setFontWeight('bold');
-  sh.getRange(2, 6).setValue('粗利判定＼バリュー');
-  sh.getRange(2, 7, 1, 3).setValues([PAY_MATRIX_COLS]);
-  sh.getRange(2, 6, 1, 4).setFontWeight('bold').setBackground('#cfd8dc');
+  // ── 昇降給マトリクス（K1〜N9）※等級テーブル(A:H)と重ならないよう右側に配置
+  sh.getRange('K1').setValue('■ 昇降給マトリクス（粗利判定×バリュー判定→最終判定）').setFontWeight('bold');
+  sh.getRange(2, 11).setValue('粗利判定＼バリュー');
+  sh.getRange(2, 12, 1, 3).setValues([PAY_MATRIX_COLS]);
+  sh.getRange(2, 11, 1, 4).setFontWeight('bold').setBackground('#cfd8dc');
   for (var i = 0; i < PAY_MATRIX_ROWS.length; i++) {
-    sh.getRange(3 + i, 6).setValue(PAY_MATRIX_ROWS[i]).setFontWeight('bold').setBackground('#eceff1');
+    sh.getRange(3 + i, 11).setValue(PAY_MATRIX_ROWS[i]).setFontWeight('bold').setBackground('#eceff1');
   }
-  sh.getRange(3, 7, PAY_MATRIX.length, 3).setValues(PAY_MATRIX).setHorizontalAlignment('center');
+  sh.getRange(3, 12, PAY_MATRIX.length, 3).setValues(PAY_MATRIX).setHorizontalAlignment('center');
 
-  // ── 改定額テーブル（F11〜H19）
-  sh.getRange('F11').setValue('■ 改定額（最終判定×等級グループ・円）').setFontWeight('bold');
-  sh.getRange(12, 6).setValue('最終判定＼グループ');
-  sh.getRange(12, 7, 1, 2).setValues([RAISE_COLS]);
-  sh.getRange(12, 6, 1, 3).setFontWeight('bold').setBackground('#cfd8dc');
+  // ── 改定額テーブル（K11〜M19）
+  sh.getRange('K11').setValue('■ 改定額（最終判定×等級グループ・円）').setFontWeight('bold');
+  sh.getRange(12, 11).setValue('最終判定＼グループ');
+  sh.getRange(12, 12, 1, 2).setValues([RAISE_COLS]);
+  sh.getRange(12, 11, 1, 3).setFontWeight('bold').setBackground('#cfd8dc');
   for (var j = 0; j < RAISE_ROWS.length; j++) {
-    sh.getRange(13 + j, 6).setValue(RAISE_ROWS[j]).setFontWeight('bold').setBackground('#eceff1');
+    sh.getRange(13 + j, 11).setValue(RAISE_ROWS[j]).setFontWeight('bold').setBackground('#eceff1');
   }
-  sh.getRange(13, 7, RAISE_TABLE.length, 2).setValues(RAISE_TABLE).setNumberFormat('+#,##0;-#,##0;±0');
+  sh.getRange(13, 12, RAISE_TABLE.length, 2).setValues(RAISE_TABLE).setNumberFormat('+#,##0;-#,##0;±0');
 
-  // ── 項目一覧（K列：バリュー、M列：スキル）
-  sh.getRange('K1').setValue('■ バリュー項目').setFontWeight('bold');
-  sh.getRange(2, 11, VALUE_ITEMS.length, 1).setValues(VALUE_ITEMS.map(function (v) { return [v]; }));
-  sh.getRange('M1').setValue('■ スキル項目').setFontWeight('bold');
-  sh.getRange(2, 13, SKILL_ITEMS.length, 1).setValues(SKILL_ITEMS.map(function (v) { return [v]; }));
+  // ── 項目一覧（P列：バリュー、R列：スキル）
+  sh.getRange('P1').setValue('■ バリュー項目').setFontWeight('bold');
+  sh.getRange(2, 16, VALUE_ITEMS.length, 1).setValues(VALUE_ITEMS.map(function (v) { return [v]; }));
+  sh.getRange('R1').setValue('■ スキル項目').setFontWeight('bold');
+  sh.getRange(2, 18, SKILL_ITEMS.length, 1).setValues(SKILL_ITEMS.map(function (v) { return [v]; }));
 
   sh.setColumnWidths(1, 8, 130);
   sh.getRange('A1').setNote('このシートはGAS（constants.gs）から書き出された参照用です。制度変更はコードを直して再生成してください。');

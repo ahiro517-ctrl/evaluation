@@ -132,10 +132,10 @@ const CONFIG_LAYOUT = {
   SKILLV: { titleRow: 29, headerRow: 30, dataStart: 31 },      // A31:C35
   RATES:  { titleRow: 37, headerRow: 38, dataStart: 39 },      // A39:C41
   RUNINFO:{ titleRow: 43, periodRow: 44 },                     // B44 = 対象期
-  MATRIX: { titleRow: 1, colLabelRow: 2, rowStart: 3 },        // F2:I9（F列見出し,G2:I2列,G3:I9値）
-  RAISE:  { titleRow: 11, colLabelRow: 12, rowStart: 13 },     // F12:H19
-  VITEMS: { titleRow: 1, dataStart: 2 },                       // K列
-  SITEMS: { titleRow: 1, dataStart: 2 },                       // M列
+  MATRIX: { titleRow: 1, colLabelRow: 2, rowStart: 3 },        // K2:N9（K列見出し,L2:N2列,L3:N9値）
+  RAISE:  { titleRow: 11, colLabelRow: 12, rowStart: 13 },     // K12:M19
+  VITEMS: { titleRow: 1, dataStart: 2 },                       // P列
+  SITEMS: { titleRow: 1, dataStart: 2 },                       // R列
 };
 
 /** 設定シートを参照する数式で使う固定レンジ（A1絶対参照） */
@@ -143,10 +143,11 @@ const REF = {
   GRADE_TBL:   "'設定'!$A$3:$H$11",
   GPJ_LOWER:   "'設定'!$A$15:$A$21",
   GPJ_JUDGE:   "'設定'!$B$15:$B$21",
-  MATRIX_VAL:  "'設定'!$G$3:$I$9",
-  MATRIX_ROW:  "'設定'!$F$3:$F$9",
-  MATRIX_COL:  "'設定'!$G$2:$I$2",
-  RAISE_VAL:   "'設定'!$G$13:$H$19",
-  RAISE_ROW:   "'設定'!$F$13:$F$19",
-  RAISE_COL:   "'設定'!$G$12:$H$12",
+  // 昇降給マトリクス・改定額は等級テーブル(A:H)と重ならないようK列以降に配置
+  MATRIX_VAL:  "'設定'!$L$3:$N$9",
+  MATRIX_ROW:  "'設定'!$K$3:$K$9",
+  MATRIX_COL:  "'設定'!$L$2:$N$2",
+  RAISE_VAL:   "'設定'!$L$13:$M$19",
+  RAISE_ROW:   "'設定'!$K$13:$K$19",
+  RAISE_COL:   "'設定'!$L$12:$M$12",
 };
