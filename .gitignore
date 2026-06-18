@@ -1,0 +1,8 @@
+# clasp（スクリプトIDは環境ごとに異なるので .clasp.json.example を使う）
+.clasp.json
+
+# clasp ログイン情報
+.clasprc.json
+
+node_modules/
+.DS_Store
